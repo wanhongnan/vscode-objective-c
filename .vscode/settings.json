@@ -1,4 +1,11 @@
 {
     "editor.renderControlCharacters": true,
-    "editor.detectIndentation": false
+    "editor.detectIndentation": false,
+    "clang.executable":"clang",
+    "clang.objcflags":[
+        "-fconstant-string-class=NSConstantString -std=c99",
+        "-IC:/GNUstep/GNUstep/System/Library/Headers",
+        "-I${workspaceRoot}/include",
+        "-LC:/GNUstep/GNUstep/System/Library/Libraries"
+    ]
 }

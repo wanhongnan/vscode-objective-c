@@ -9,5 +9,7 @@ http://ftp.gnustep.org/pub/gnustep/binaries/windows/gorm-1.2.8-setup.exe
 
 2.使用mingw32-make编译
 
-
+3.配置自动完全
+下载插件：C/C++ Clang Command Adapter
+下载: LLVM&clang http://releases.llvm.org/ 安装
 
