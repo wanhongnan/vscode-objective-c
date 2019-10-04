@@ -4,6 +4,6 @@
     LinkNode *nextNode;
 }
 
-- (LinkNode*)next;
+-(LinkNode*)next;
 -(void)append:(LinkNode*)newNode;
 @end

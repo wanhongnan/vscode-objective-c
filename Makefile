@@ -3,7 +3,7 @@ GCC = gcc -fconstant-string-class=NSConstantString -std=c99
 LIB = -LC:/GNUstep/GNUstep/System/Library/Libraries
 INC = -IC:/GNUstep/GNUstep/System/Library/Headers -I./include
 
-objects = main.o LinkNode.o
+objects = main.o LinkNode.o FirstWindow.o
 libs = -l:libobjc.dll.a -l:libgnustep-base.dll.a -l:libGorm.dll.a -l:libGormCore.dll.a -l:libgnustep-gui.dll.a \
 	   -l:libgnustep-base.dll.a
 out = proc.exe
@@ -15,6 +15,8 @@ main.o : ./src/main.m ./include/main.h
 	$(GCC) $(INC) -c ./src/main.m
 LinkNode.o : ./src/LinkNode.m ./include/LinkNode.h
 	$(GCC) $(INC) -c ./src/LinkNode.m
+FirstWindow.o : ./src/FirstWindow.m ./include/FirstWindow.h
+	$(GCC) $(INC) -c ./src/FirstWindow.m
 
 clean :
 	rm $(out) $(objects)
