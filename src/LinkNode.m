@@ -17,7 +17,6 @@
     [nextNode release];
     [newNode retain];
     nextNode = newNode;
-    
 }
 
 @end
