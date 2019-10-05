@@ -15,28 +15,41 @@
     [win makeKeyAndOrderFront:win];
     [win makeMainWindow];
 
-    Calc *calc = [[Calc alloc] init];
-    calc.frame = win.frame;
-    [win.contentView addSubview:calc];
-    [calc viewDidLoad];
+    //使用NSViewController管理View
+    //Calc *calc = [[Calc alloc] initWithWindow:win];
+    Calc *calc = [[Calc alloc] initWithNibName:nil bundle:nil];
+    win.contentView = calc.view;
+
+    //直接加View，当Calc是NSView时使用
+    //Calc *calc = [[Calc alloc] init];
+    //calc.frame = win.frame;
+    //[win.contentView addSubview:calc];
+    //[calc viewDidLoad];
 
     [NSApp run];
     [pool retain];
 }
 
--(void) viewDidLoad {
-    [super viewDidLoad];
+-(void) loadView {
+    NSLog(@"loadView start");
+    [super loadView];
+    self.view = [[NSView alloc] initWithFrame:NSMakeRect(0,0,1000, 500)]; 
+    [self createUI];
+}
+-(void)createUI{
     NSButton *btn = [[NSButton alloc] init];
     [btn setTitle:@"确认"];
+    btn.tag = 1;
     btn.frame= NSMakeRect(0, 0, 64, 64);
-    [self addSubview:btn];
+    [self.view addSubview:btn];
 
     [btn setTarget:self];
-    [btn setAction:@selector(onBtnClick)];
+    [btn setAction:@selector(onBtnClick:)];
 }
 
--(void)onBtnClick{
-    NSLog(@"onBtnClickmake");
+-(void)onBtnClick:(NSButton *)btn
+{
+    NSLog(@"onBtnClickmake %d",btn.tag);
 }
 
 @end

@@ -2,11 +2,12 @@
 #import <Foundation/Foundation.h>
 #import <Cocoa/Cocoa.h>
 
-@interface Calc : NSView{
+@interface Calc : NSViewController{
 }
 
 +(void)showWindow;
--(void)viewDidLoad;
--(void)onBtnClick;
+-(void)loadView;
+-(void)createUI;
+-(void)onBtnClick:(NSButton *)btn;
 
 @end
