@@ -1,7 +1,7 @@
-#import "../include/Calc.h"
+#import "../include/CalcViewController.h"
 #import <Cocoa/Cocoa.h>
 
-@implementation Calc
+@implementation CalcViewController
 
 +(void)showWindow{
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
@@ -17,7 +17,7 @@
 
     //使用NSViewController管理View
     //Calc *calc = [[Calc alloc] initWithWindow:win];
-    Calc *calc = [[Calc alloc] initWithNibName:nil bundle:nil];
+    CalcViewController *calc = [[CalcViewController alloc] initWithNibName:nil bundle:nil];
     win.contentView = calc.view;
 
     //直接加View，当Calc是NSView时使用
